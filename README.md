@@ -9,3 +9,5 @@ This project focuses on analyzing Twitter accounts of **Key Opinion Leaders** (K
   + Influence and Effectiveness: Measure how well their content spreads and influences their followers.
   + Engagement: Look at interactions (likes, retweets) as a proxy for how active and engaging their followers are.
   + Credibility: Evaluate account authenticity to differentiate genuine influence from bots or spammy activity.
+
+In summary, the objective is to build a framework to score or rank these Twitter accounts based on their real impact and engagement in the **"Web3 space"**. This involves data collection, AI-based analysis, and a scoring model to provide meaningful insights.
