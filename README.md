@@ -10,6 +10,20 @@ Evaluation of Twitter Account Quality for KOLs in the Web3 Space. In Web3 market
 
 - Deployment of Machine Learning, AI, and Deep Learning Models: Utilize advanced techniques in machine learning, artificial intelligence, and deep learning to evaluate the quality of each KOL's Twitter account.
 
+
 ## Objective
 
 The project aims to create a system that assesses the quality of Twitter accounts operated by Key Opinion Leaders (KOLs) in the Web3 space. The goal is to provide actionable insights into their influence, engagement, credibility, and effectiveness in driving Web3 marketing trends and building communities.
+
+
+## Workflow
+
+1. Data Collection
+
+2. Data Processing
+
+3. Machine Learning
+
+4. Dashboard
+
+5*. Deployment 
