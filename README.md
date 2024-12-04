@@ -26,4 +26,4 @@ The project aims to create a system that assesses the quality of Twitter account
 
 4. Dashboard
 
-5*. Deployment 
+5. *Deployment 
