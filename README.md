@@ -18,12 +18,57 @@ The project aims to create a system that assesses the quality of Twitter account
 
 ## Workflow
 
-1. Data Collection
+### 1. Data Collection
+- **Ingestion:**
+  - Twitter API (real-time streaming data).
+  - Kafka streams Twitter data for real-time processing.
 
-2. Data Processing
+- **Orchestration:**
+  - Apache NiFi automates workflows for raw data collection and pushes it to storage.
 
-3. Machine Learning
+- **Storage:**
+  - Raw data stored in HDFS for further processing.
 
-4. Dashboard
+### 2. Data Processing
+- **Batch Processing:**
+  - Use Apache Spark to clean, preprocess, and transform data (e.g., removing noise, feature extraction).
+  - Save processed data in a structured format (e.g., Parquet) for efficient querying.
 
-5. *Deployment 
+- **Real-Time Processing:**
+  - Apache Flink analyzes streaming Twitter data for real-time insights.
+
+- **Data Enrichment:**
+  - Use external APIs (e.g., sentiment analysis services) to enhance raw data with additional features like sentiment and topic tags.
+
+### 3. Machine Learning & Analysis
+- **Data Preparation & Training:**
+  - Spark pipelines create labeled datasets for supervised learning.
+
+- **ML Models:**
+  - Deploy deep learning models (using TensorFlow or PyTorch) for advanced tasks like sentiment analysis, fake account detection, and topic modeling.
+  - Use MLlib for scalable influence scoring models.
+
+- **Evaluation:**
+  - Use distributed tools to validate models and compute results.
+  - Save model outputs in storage for visualization.
+
+
+### 4. Data Visualization
+- **Backend API:**
+  - Serve processed data and model insights using APIs (e.g., FastAPI, Flask).
+
+- **Dashboard:**
+  - Build dashboards using Tableau, Superset, or Grafana.
+  - Visualize KOL rankings, engagement trends, and network graphs.
+
+- **Real-Time Updates:**
+  - Integrate real-time metrics and updates using Grafana connected to Kafka or Flink.
+
+5. **Deployment & Monitoring:**
+- **Deployment:**
+  - Use Kubernetes to containerize and deploy the entire pipeline.
+  - Deploy ML models using TensorFlow Serving or TorchServe.
+
+- **Monitoring:**
+  - Use Prometheus for collecting metrics on system health.
+  - Visualize metrics using Grafana for debugging and optimization.
