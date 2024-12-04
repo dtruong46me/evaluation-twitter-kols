@@ -4,11 +4,11 @@ Evaluation of Twitter Account Quality for KOLs in the Web3 Space. In Web3 market
 
 **Requirements:**
 
-● Identification of KOL Twitter Accounts: Compile a comprehensive list of Twitter accounts belonging to KOLs being actively involved in the Web3 space.  
+- Identification of KOL Twitter Accounts: Compile a comprehensive list of Twitter accounts belonging to KOLs being actively involved in the Web3 space.  
 
-● Data Collection Workflows: Develop and implement automated workflows for collecting relevant data from Twitter. 
+- Data Collection Workflows: Develop and implement automated workflows for collecting relevant data from Twitter. 
 
-● Deployment of Machine Learning, AI, and Deep Learning Models: Utilize advanced techniques in machine learning, artificial intelligence, and deep learning to evaluate the quality of each KOL's Twitter account.
+- Deployment of Machine Learning, AI, and Deep Learning Models: Utilize advanced techniques in machine learning, artificial intelligence, and deep learning to evaluate the quality of each KOL's Twitter account.
 
 ## Objective
 
