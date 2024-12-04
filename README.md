@@ -64,7 +64,7 @@ The project aims to create a system that assesses the quality of Twitter account
 - **Real-Time Updates:**
   - Integrate real-time metrics and updates using Grafana connected to Kafka or Flink.
 
-5. **Deployment & Monitoring:**
+### 5. Deployment & Monitoring
 - **Deployment:**
   - Use Kubernetes to containerize and deploy the entire pipeline.
   - Deploy ML models using TensorFlow Serving or TorchServe.
