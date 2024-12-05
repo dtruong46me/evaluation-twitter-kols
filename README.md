@@ -11,64 +11,35 @@ Evaluation of Twitter Account Quality for KOLs in the Web3 Space. In Web3 market
 - Deployment of Machine Learning, AI, and Deep Learning Models: Utilize advanced techniques in machine learning, artificial intelligence, and deep learning to evaluate the quality of each KOL's Twitter account.
 
 
-## Objective
+## Requirements Analysis
 
-The project aims to create a system that assesses the quality of Twitter accounts operated by Key Opinion Leaders (KOLs) in the Web3 space. The goal is to provide actionable insights into their influence, engagement, credibility, and effectiveness in driving Web3 marketing trends and building communities.
+> Detail: [Requirement Analysis Document](/document/Requirement_Analysis.md)
 
+## System Architecture Design
 
-## Workflow
+> Detail: [System Architecture Design](/document/System_Architecture.md)
 
-### 1. Data Collection
-- **Ingestion:**
-  - Twitter API (real-time streaming data).
-  - Kafka streams Twitter data for real-time processing.
+## Installation
+1. Clone Repository
 
-- **Orchestration:**
-  - Apache NiFi automates workflows for raw data collection and pushes it to storage.
+    ```
+    git clone https://github.com/dtruong46me/evaluation-twitter-kols.git
+    ```
 
-- **Storage:**
-  - Raw data stored in HDFS for further processing.
+2. Install Requirements
+    ```
+    pip install requirements.txt
+    ```
 
-### 2. Data Processing
-- **Batch Processing:**
-  - Use Apache Spark to clean, preprocess, and transform data (e.g., removing noise, feature extraction).
-  - Save processed data in a structured format (e.g., Parquet) for efficient querying.
+## Contributors
 
-- **Real-Time Processing:**
-  - Apache Flink analyzes streaming Twitter data for real-time insights.
+- Supervisors: Prof. Tran Van Dang
 
-- **Data Enrichment:**
-  - Use external APIs (e.g., sentiment analysis services) to enhance raw data with additional features like sentiment and topic tags.
+- Members
 
-### 3. Machine Learning & Analysis
-- **Data Preparation & Training:**
-  - Spark pipelines create labeled datasets for supervised learning.
-
-- **ML Models:**
-  - Deploy deep learning models (using TensorFlow or PyTorch) for advanced tasks like sentiment analysis, fake account detection, and topic modeling.
-  - Use MLlib for scalable influence scoring models.
-
-- **Evaluation:**
-  - Use distributed tools to validate models and compute results.
-  - Save model outputs in storage for visualization.
-
-
-### 4. Data Visualization
-- **Backend API:**
-  - Serve processed data and model insights using APIs (e.g., FastAPI, Flask).
-
-- **Dashboard:**
-  - Build dashboards using Tableau, Superset, or Grafana.
-  - Visualize KOL rankings, engagement trends, and network graphs.
-
-- **Real-Time Updates:**
-  - Integrate real-time metrics and updates using Grafana connected to Kafka or Flink.
-
-### 5. Deployment & Monitoring
-- **Deployment:**
-  - Use Kubernetes to containerize and deploy the entire pipeline.
-  - Deploy ML models using TensorFlow Serving or TorchServe.
-
-- **Monitoring:**
-  - Use Prometheus for collecting metrics on system health.
-  - Visualize metrics using Grafana for debugging and optimization.
+|No.|Name|Student ID|Email|Role|
+|:-:|:-|:-:|:-|:-:|
+|1|Phan Dinh Truong|20214937|truong.pd214937@sis.hust.edu.vn|Leader|
+|2|Dinh Nguyen Cong Quy|20214927|quy.dnc214927@sis.hust.edu.vn|Member|
+|3|Bui Minh Quang|20214929|quang.bm214929@sis.hust.edu.vn|Member|
+|4|Pham Quang Trung|20214936|trung.pq204936@sis.hust.edu.vn|Member|
