@@ -49,5 +49,5 @@ class TwitterAPI:
 
 if __name__ == '__main__':
     twitter = TwitterAPI()
-    usernames = twitter.search_users_by_keyword(["data science", "machine learning"])
+    usernames = twitter.search_users_by_keyword(["metaverse", "web3"])
     print(usernames)
