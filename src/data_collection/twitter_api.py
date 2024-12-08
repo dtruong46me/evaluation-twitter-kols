@@ -126,6 +126,7 @@ if __name__ == "__main__":
     config = load_config()
     keywords = config["twitter"]["keywords"]
     # Output: ['web3', 'blockchain', 'ethereum', 'decentralized', 'crypto', 'nft', 'metaverse', 'defi', 'dapp', 'smart contract', 'solidity']
+    print(f"Keywords: {keywords}")
 
     # Initialize TwitterAPI
     twitterapi = TwitterAPI()
