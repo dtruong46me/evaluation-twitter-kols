@@ -154,7 +154,131 @@ if __name__ == "__main__":
 PS C:\Users\dnhtr\DT_Projects\evaluation-twitter-kols> & C:/Users/dnhtr/AppData/Local/Programs/Python/Python310/python.exe c:/Users/dnhtr/DT_Projects/evaluation-twitter-kols/src/data_collection/twitter_api.py
 Keywords: ['web3', 'blockchain', 'ethereum', 'decentralized', 'crypto', 'nft', 'metaverse', 'defi', 'dapp', 'smart contract', 'solidity']
 Search results for 'web3':
-[{'id': 1865780476398522837, 'text': 'Web3 is redefining value storage and transfer protocols', 'author_id': 1850283248934408193, 'created_at': datetime.datetime(2024, 12, 8, 15, 28, 24, tzinfo=datetime.timezone.utc), 'public_metrics': {'retweet_count': 0, 'reply_count': 0, 'like_count': 0, 'quote_count': 0, 'bookmark_count': 0, 'impression_count': 0}}, {'id': 1865780475266302069, 'text': "Web3's hidden gem: protocols that let users farm yield without risking a fortune", 'author_id': 1847209958699622400, 'created_at': datetime.datetime(2024, 12, 8, 15, 28, 24, tzinfo=datetime.timezone.utc), 'public_metrics': {'retweet_count': 0, 'reply_count': 0, 'like_count': 0, 'quote_count': 0, 'bookmark_count': 0, 'impression_count': 0}}, {'id': 1865780474834190583, 'text': 'RT @ChainbaseHQ: The Chainbase AVS Mainnet is officially live!\n\nThis marks a huge milestone in decentralized data infrastructure. Let’s bre…', 'author_id': 2781133702, 'created_at': datetime.datetime(2024, 12, 8, 15, 28, 24, tzinfo=datetime.timezone.utc), 'public_metrics': {'retweet_count': 65700, 'reply_count': 0, 'like_count': 0, 'quote_count': 0, 'bookmark_count': 0, 'impression_count': 0}}, {'id': 1865780473689206905, 'text': 'RT @TheAureliya: @cz_binance @RonghuiGu @nikichain Just watched this video— \n\n@CertiK audits always give me extra confidence in a project!…', 'author_id': 1865271618152599552, 'created_at': datetime.datetime(2024, 12, 8, 15, 28, 24, tzinfo=datetime.timezone.utc), 'public_metrics': {'retweet_count': 625, 'reply_count': 0, 'like_count': 0, 'quote_count': 0, 'bookmark_count': 0, 'impression_count': 0}}, {'id': 1865780473085010159, 'text': "Web3's hidden gem is its ability to democratize access to financial resources for underserved communities worldwide", 'author_id': 1838161164770988032, 'created_at': datetime.datetime(2024, 12, 8, 15, 28, 23, tzinfo=datetime.timezone.utc), 'public_metrics': {'retweet_count': 0, 'reply_count': 0, 'like_count': 0, 'quote_count': 0, 'bookmark_count': 0, 'impression_count': 0}}, {'id': 1865780472338657675, 'text': 'RT @TheAureliya: @cz_binance @RonghuiGu @nikichain Just watched this video— \n\n@CertiK audits always give me extra confidence in a project!…', 'author_id': 1643137983967789056, 'created_at': datetime.datetime(2024, 12, 8, 15, 28, 23, tzinfo=datetime.timezone.utc), 'public_metrics': {'retweet_count': 625, 'reply_count': 0, 'like_count': 0, 'quote_count': 0, 'bookmark_count': 0, 'impression_count': 0}}, {'id': 1865780471151411618, 'text': "@Web3_Dad I'm interested", 'author_id': 1073177936700866561, 'created_at': datetime.datetime(2024, 12, 8, 15, 28, 23, tzinfo=datetime.timezone.utc), 'public_metrics': {'retweet_count': 0, 'reply_count': 0, 'like_count': 0, 'quote_count': 0, 'bookmark_count': 0, 'impression_count': 0}}, {'id': 1865780470799348022, 'text': 'RT @bunniefied: 👉 Sign up today and be part of the MEET48 revolution!\xa0🚀🚀\n\n✅ Follow @meet_48\n✅ RT &amp; LIKE\n\nWhat is MEET48? 🤔\nMEET48 is an imm…', 'author_id': 1849071844323983360, 'created_at': datetime.datetime(2024, 12, 8, 15, 28, 23, tzinfo=datetime.timezone.utc), 'public_metrics': {'retweet_count': 300, 'reply_count': 0, 'like_count': 0, 'quote_count': 0, 'bookmark_count': 0, 'impression_count': 0}}, {'id': 1865780470761332969, 'text': "Web3's hidden gems are quietly disrupting traditional banking models one protocol at a time", 'author_id': 1853048986271109121, 'created_at': datetime.datetime(2024, 12, 8, 15, 28, 23, tzinfo=datetime.timezone.utc), 'public_metrics': {'retweet_count': 0, 'reply_count': 0, 'like_count': 0, 'quote_count': 0, 'bookmark_count': 0, 'impression_count': 0}}, {'id': 1865780469130039752, 'text': 'RT @CryptoDa_Bless: 🚨ThrillingERROR2: 429 Too Many Requests
+[
+    {
+        'id': 1865780476398522837, 
+        'text': 'Web3 is redefining value storage and transfer protocols', 
+        'author_id': 1850283248934408193, 
+        'created_at': datetime.datetime(2024, 12, 8, 15, 28, 24, tzinfo=datetime.timezone.utc), 
+        'public_metrics': {
+            'retweet_count': 0, 
+            'reply_count': 0, 
+            'like_count': 0, 
+            'quote_count': 0, 
+            'bookmark_count': 0, 
+            'impression_count': 0
+        }
+    }, 
+    {
+        'id': 1865780475266302069, 
+        'text': "Web3's hidden gem: protocols that let users farm yield without risking a fortune", 
+        'author_id': 1847209958699622400, 
+        'created_at': datetime.datetime(2024, 12, 8, 15, 28, 24, tzinfo=datetime.timezone.utc), 
+        'public_metrics': {
+            'retweet_count': 0, 
+            'reply_count': 0, 
+            'like_count': 0, 
+            'quote_count': 0, 
+            'bookmark_count': 0, 
+            'impression_count': 0
+        }
+    }, 
+    {
+        'id': 1865780474834190583, 
+        'text': 'RT @ChainbaseHQ: The Chainbase AVS Mainnet is officially live!\n\nThis marks a huge milestone in decentralized data infrastructure. Let’s bre…', 
+        'author_id': 2781133702, 
+        'created_at': datetime.datetime(2024, 12, 8, 15, 28, 24, tzinfo=datetime.timezone.utc), 
+        'public_metrics': {
+            'retweet_count': 65700, 
+            'reply_count': 0, 
+            'like_count': 0, 
+            'quote_count': 0, 
+            'bookmark_count': 0, 
+            'impression_count': 0
+        }
+    }, 
+    {
+        'id': 1865780473689206905, 
+        'text': 'RT @TheAureliya: @cz_binance @RonghuiGu @nikichain Just watched this video— \n\n@CertiK audits always give me extra confidence in a project!…', 
+        'author_id': 1865271618152599552, 
+        'created_at': datetime.datetime(2024, 12, 8, 15, 28, 24, tzinfo=datetime.timezone.utc), 
+        'public_metrics': {
+            'retweet_count': 625, 
+            'reply_count': 0, 
+            'like_count': 0, 
+            'quote_count': 0, 
+            'bookmark_count': 0, 
+            'impression_count': 0
+        }
+    }, 
+    {
+        'id': 1865780473085010159, 
+        'text': "Web3's hidden gem is its ability to democratize access to financial resources for underserved communities worldwide", 
+        'author_id': 1838161164770988032, 
+        'created_at': datetime.datetime(2024, 12, 8, 15, 28, 23, tzinfo=datetime.timezone.utc), 
+        'public_metrics': {
+            'retweet_count': 0, 
+            'reply_count': 0, 
+            'like_count': 0, 
+            'quote_count': 0, 
+            'bookmark_count': 0, 
+            'impression_count': 0
+        }
+    }, 
+    {
+        'id': 1865780472338657675, 
+        'text': 'RT @TheAureliya: @cz_binance @RonghuiGu @nikichain Just watched this video— \n\n@CertiK audits always give me extra confidence in a project!…', 
+        'author_id': 1643137983967789056, 
+        'created_at': datetime.datetime(2024, 12, 8, 15, 28, 23, tzinfo=datetime.timezone.utc), 
+        'public_metrics': {
+            'retweet_count': 625, 
+            'reply_count': 0, 
+            'like_count': 0, 
+            'quote_count': 0, 
+            'bookmark_count': 0, 
+            'impression_count': 0
+        }
+    }, 
+    {
+        'id': 1865780471151411618, 
+        'text': "@Web3_Dad I'm interested", 
+        'author_id': 1073177936700866561, 
+        'created_at': datetime.datetime(2024, 12, 8, 15, 28, 23, tzinfo=datetime.timezone.utc), 
+        'public_metrics': {
+            'retweet_count': 0, 
+            'reply_count': 0, 
+            'like_count': 0, 
+            'quote_count': 0, 
+            'bookmark_count': 0, 
+            'impression_count': 0
+        }
+    }, 
+    {
+        'id': 1865780470799348022, 
+        'text': 'RT @bunniefied: 👉 Sign up today and be part of the MEET48 revolution!\xa0🚀🚀\n\n✅ Follow @meet_48\n✅ RT &amp; LIKE\n\nWhat is MEET48? 🤔\nMEET48 is an imm…', 
+        'author_id': 1849071844323983360, 
+        'created_at': datetime.datetime(2024, 12, 8, 15, 28, 23, tzinfo=datetime.timezone.utc), 
+        'public_metrics': {
+            'retweet_count': 300, 
+            'reply_count': 0, 
+            'like_count': 0, 
+            'quote_count': 0, 
+            'bookmark_count': 0, 
+            'impression_count': 0
+        }
+    }, 
+    {
+        'id': 1865780470761332969, 
+        'text': "Web3's hidden gems are quietly disrupting traditional banking models one protocol at a time", 
+        'author_id': 1853048986271109121, 
+        'created_at': datetime.datetime(2024, 12, 8, 15, 28, 23, tzinfo=datetime.timezone.utc), 
+        'public_metrics': {
+            'retweet_count': 0, 
+            'reply_count': 0, 
+            'like_count': 0, 
+            'quote_count': 0, 
+            'bookmark_count': 0, 
+            'impression_count': 0}}, {'id': 1865780469130039752, 'text': 'RT @CryptoDa_Bless: 🚨ThrillingERROR2: 429 Too Many Requests
 Too Many Requests
 User info:
 {}
