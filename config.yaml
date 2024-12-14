@@ -1,0 +1,24 @@
+# config.yaml: A configuration file for the data collection process
+twitter:
+  user_search_limit: 50
+  num_tweets_per_user: 100
+  store_path: "data/raw/twitter_data.csv"
+  keywords:
+    - "web3"
+    - "blockchain"
+    - "ethereum"
+    - "decentralized"
+    - "crypto"
+    - "nft"
+    - "metaverse"
+    - "defi"
+    - "dapp"
+    - "smart contract"
+    - "solidity"
+
+postgresdb:
+  host: "localhost"
+  port: 5432
+  dbname: "twitter_kols"
+  user: "truongpd"
+  password: "Choibidaitthoi@123"
