@@ -4,16 +4,15 @@ import json
 from typing import List, Dict, Any
 import datetime
 
-def load_config():
-    path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'config', 'config.yaml'))
-    with open(path, 'r') as file:
-        config = yaml.safe_load(file)
-    
-    return config
-
-
-def load_kafka_config():
-    path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', "config", 'kafka_config.yaml'))
+def load_config(filename="config.yaml"):
+    """
+    Load configuration from a YAML file from "/config" directory
+    Args:
+        filename (str): File name (e.g., 'config.yaml')
+    Returns:
+        dict: Configuration parameters
+    """
+    path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'config', filename))
     with open(path, 'r') as file:
         config = yaml.safe_load(file)
     
@@ -42,6 +41,4 @@ def save_to_json(data: List[Dict[str, Any]], filename: str):
         print(f"ERROR: Failed to save data to {filename}: {e}")
 
 if __name__=='__main__':
-    print(load_config())
-
-    print(load_kafka_config())
+    print(load_config("kafka_config.yaml"))
