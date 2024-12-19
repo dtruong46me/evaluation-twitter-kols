@@ -5,11 +5,20 @@ from typing import List, Dict, Any
 import datetime
 
 def load_config():
-    path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'config.yaml'))
+    path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'config', 'config.yaml'))
     with open(path, 'r') as file:
         config = yaml.safe_load(file)
     
     return config
+
+
+def load_kafka_config():
+    path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', "config", 'kafka_config.yaml'))
+    with open(path, 'r') as file:
+        config = yaml.safe_load(file)
+    
+    return config
+
 
 def save_to_json(data: List[Dict[str, Any]], filename: str):
     """
@@ -34,3 +43,5 @@ def save_to_json(data: List[Dict[str, Any]], filename: str):
 
 if __name__=='__main__':
     print(load_config())
+
+    print(load_kafka_config())
