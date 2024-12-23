@@ -2,6 +2,7 @@
 import tweepy
 import os, sys
 from typing import List, Dict, Any
+from datetime import datetime, timezone
 from dotenv import load_dotenv
 
 path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -11,6 +12,8 @@ from utils import load_config, save_to_json
 load_dotenv()
 
 class TwitterAPI:
+
+
     def __init__(self):
         self.client = self.authenticate_twitter()
 
@@ -26,7 +29,7 @@ class TwitterAPI:
         except Exception as e:
             print(f"ERROR0: {e}")
     
-    def search_tweets(self, query: str, max_results: int=10) -> List[Dict[str, Any]]:
+    def search_tweets(self, query: str, max_results: int=20) -> List[Dict[str, Any]]:
         """
         Search for recent tweets based on a query
         Args:
@@ -36,6 +39,9 @@ class TwitterAPI:
             List of dictionaries containing tweet information
         """
         try:
+            START_TIME = datetime(2024, 12, 1, tzinfo=timezone.utc)
+            END_TIME   = datetime(2024, 12, 10, tzinfo=timezone.utc)
+
             # `GET /2/tweets/search/recent` endpoint -> 450 requests per 15-minute window (app auth)
             query = f"{query} lang:en"
             response = self.client.search_recent_tweets(
@@ -135,10 +141,13 @@ if __name__ == "__main__":
     twitterapi = TwitterAPI()
 
     # Search for recent tweets based on the first keyword
-    query = keywords[0]
-    tweets = twitterapi.search_tweets(query=query, max_results=10)
-    print(f"Search results for '{query}':")
-    for tweet in tweets:
-        print(tweet)
+    # query = keywords[0]
+    # tweets = twitterapi.search_tweets(query=query, max_results=10)
+    # print(f"Search results for '{query}':")
+    # for tweet in tweets:
+    #     print(tweet)
 
-    save_to_json(data=tweets, filename=OUTPUT_PATH)
+    # save_to_json(data=tweets, filename=OUTPUT_PATH)
+
+    user_info = twitterapi.get_user_info(user_id="1826143586376888323")
+    print(user_info)

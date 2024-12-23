@@ -1,0 +1,5 @@
+kafka-python
+requests
+pyyaml
+unittest
+hdfs==2.7.3
