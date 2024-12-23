@@ -133,7 +133,7 @@ class TwitterAPI:
 
 if __name__ == "__main__":
     ROOT        = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-    OUTPUT_PATH = os.path.join(ROOT, "data", "raw", "top_50_recent_tweets2.json")
+    OUTPUT_PATH = os.path.join(ROOT, "data", "raw", "top_50_recent_tweets3.json")
     
     config   = load_config()
     keywords = config["twitter"]["keywords"] # Output: ['web3', 'blockchain', 'ethereum', 'decentralized', 'crypto', 'nft', 'metaverse', 'defi', 'dapp', 'smart contract', 'solidity']
@@ -141,7 +141,7 @@ if __name__ == "__main__":
     twitterapi = TwitterAPI()
 
     # Search for recent tweets based on the first keyword
-    # query = keywords[0]
+    # query = keywords[1]
     # tweets = twitterapi.search_tweets(query=query, max_results=10)
     # print(f"Search results for '{query}':")
     # for tweet in tweets:
@@ -149,5 +149,5 @@ if __name__ == "__main__":
 
     # save_to_json(data=tweets, filename=OUTPUT_PATH)
 
-    user_info = twitterapi.get_user_info(user_id="1826143586376888323")
+    user_info = twitterapi.get_user_info(user_id="1470294072808124419")
     print(user_info)

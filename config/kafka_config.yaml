@@ -1,10 +1,12 @@
 kafka:
   bootstrap_servers:
-    - "localhost:9092"
+    - "localhost:29092"
+    - "localhost:29093"
 
   topics:
     tweet_topic: "twitter_tweets"
     user_topic: "twitter_users"
+    mention_topic: "twitter_mentions"
     
   consumer_config:
     group_id: "twitter_group"
@@ -12,7 +14,7 @@ kafka:
     enable_auto_commit: true
     
   producer_config:
-    acks: "all"
+    acks: 1
     retries: 3
     batch_size: 16384
     linger_ms: 1
