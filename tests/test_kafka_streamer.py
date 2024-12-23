@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from src.data_collection.kafka_streamer import KafkaStreamer
+from src.twitter_api.kafka_streamer import KafkaStreamer
 
 class TestKafkaStreamer(unittest.TestCase):
     @patch("src.kafka_streamer.KafkaProducer")

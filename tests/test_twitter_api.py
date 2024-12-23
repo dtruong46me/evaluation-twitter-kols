@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from src.data_collection.twitter_api import TwitterAPI
+from src.twitter_api.twitter_api import TwitterAPI
 
 class TestTwitterAPI(unittest.TestCase):
     @patch("src.twitter_api.requests.get")

@@ -41,4 +41,5 @@ def save_to_json(data: List[Dict[str, Any]], filename: str):
         print(f"ERROR: Failed to save data to {filename}: {e}")
 
 if __name__=='__main__':
-    print(load_config("kafka_config.yaml"))
+    test = load_config("twitter_api.yaml")
+    print(test)

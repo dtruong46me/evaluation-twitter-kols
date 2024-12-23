@@ -1,3 +1,19 @@
 kafka:
-  bootstrap_servers: "localhost:9092"
-  topic: "twitter-stream"
+  bootstrap_servers:
+    - "localhost:9092"
+
+  topics:
+    tweet_topic: "twitter_tweets"
+    user_topic: "twitter_users"
+    
+  consumer_config:
+    group_id: "twitter_group"
+    auto_offset_reset: "earliest"
+    enable_auto_commit: true
+    
+  producer_config:
+    acks: "all"
+    retries: 3
+    batch_size: 16384
+    linger_ms: 1
+    buffer_memory: 33554432

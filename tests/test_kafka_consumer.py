@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from src.data_collection.kafka_consumer import KafkaConsumerApp
+from src.twitter_api.kafka_consumer import KafkaConsumerApp
 
 class TestKafkaConsumerApp(unittest.TestCase):
     @patch("src.kafka_consumer.KafkaConsumer")
