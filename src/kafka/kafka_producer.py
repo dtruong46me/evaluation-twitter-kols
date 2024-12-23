@@ -11,14 +11,14 @@ import time
 class TwitterKafkaProducer:
     def __init__(self, kafka_config: Dict[str, Any]):
         self.producer = KafkaProducer(
-            bootstrap_servers=kafka_config['bootstrap_servers'],
+            bootstrap_servers=kafka_config['kafka']['bootstrap_servers'],
             value_serializer=lambda v: json.dumps(v).encode('utf-8')
         )
 
-        self.tweet_topic = kafka_config["topics"]['tweet_topic']
-        self.user_topic  = kafka_config["topics"]['user_topic']
+        self.tweet_topic = kafka_config['kafka']['topics']['tweet_topic']
+        self.user_topic = kafka_config['kafka']['topics']['user_topic']
 
-    
+
     def send_tweet_to_stream(self, tweet_data: Dict[str, Any]) -> None:
         """
         Send tweet data to Kafka stream
@@ -28,8 +28,9 @@ class TwitterKafkaProducer:
             None
         """
         try:
+            print(f"[+] Sending data to Kafka: id='{tweet_data['id']}'")
             self.producer.send(topic=self.tweet_topic, value=tweet_data)
-            print(f"Tweet sent to Kafka stream: {tweet_data['id']}")
+            print(f"[+] Sent tweet to Kafka: \n{tweet_data}\n")
             logging.info(f"Tweet sent to Kafka stream: {tweet_data['id']}")
         
         except Exception as e:
@@ -52,24 +53,6 @@ class TwitterKafkaProducer:
         except Exception as e:
             logging.error(f"Error sending user to Kafka stream: {e}")
 
-    
-    def save_to_hdfs(self, hdfs_client: InsecureClient, hdfs_config: Dict[str, Any], data: Dict[str, Any]) -> None:
-        """
-        Save data to HDFS
-        Args:
-            hdfs_client (InsecureClient): HDFS client
-            hdfs_config (Dict[str, Any]): HDFS configuration
-            data (Dict[str, Any]): Data to save
-        Returns:
-            None
-        """
-        try:
-            hdfs_client.write(hdfs_config['path'], data=json.dumps(data))
-            logging.info(f"Data saved to HDFS: {data['id']}")
-        
-        except Exception as e:
-            logging.error(f"Error saving data to HDFS: {e}")
-
 
 def run():
     root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -77,7 +60,8 @@ def run():
     from src.utils import load_config
 
     kafka_config = load_config("kafka_config.yaml")
-    print(kafka_config)
+
+    print(f"[+] Kafka config: \n{kafka_config}\n")
     producer = TwitterKafkaProducer(kafka_config=kafka_config)
     print("Kafka producer started")
 
