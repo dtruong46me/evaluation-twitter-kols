@@ -27,8 +27,11 @@ def delivery_report(err, msg):
 def read_config():
   # reads the client configuration from client.properties
   # and returns it as a key-value map
+  root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+  client_path = os.path.join(root, "src", "data_collection", "kafka", "client.properties")
   config = {}
-  with open("client.properties") as fh:
+
+  with open(client_path) as fh:
     for line in fh:
       line = line.strip()
       if len(line) != 0 and line[0] != "#":

@@ -1,12 +1,19 @@
 import os
-
-from .utils import *
-from utils import *
-#from settings import KAFKA_ADDRESS
-from json_producer import setting_up
+import sys
 import time
 import pandas as pd
-from twitter_api import TwitterAPI
+from typing import List, Dict, Any
+
+root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+sys.path.insert(0, root)
+
+from src.data_collection.kafka.utils import *
+from src.data_collection.kafka.utils import *
+#from settings import KAFKA_ADDRESS
+from src.data_collection.kafka.json_producer import setting_up
+from src.data_collection.kafka.twitter_api import TwitterAPI
+from src.utils import load_config
+
 
 def get_web3_users_info(twitter_api: TwitterAPI, keywords: List[str], max_tweets_per_keyword: int = 50) -> List[Dict[str, Any]]:
     """

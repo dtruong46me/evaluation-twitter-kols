@@ -3,11 +3,13 @@ import tweepy
 import os, sys
 from typing import List, Dict, Any
 from dotenv import load_dotenv
-
-path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-sys.path.insert(0, path)
-from utils import load_config, save_to_json
 import datetime
+
+path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+sys.path.insert(0, path)
+
+from src.utils import load_config, save_to_json
+
 
 load_dotenv()
 
