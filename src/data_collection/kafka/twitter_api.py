@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, path)
 from utils import load_config, save_to_json
+import datetime
 
 load_dotenv()
 
@@ -50,9 +51,12 @@ class TwitterAPI:
                 tweets.append({
                     "id": tweet["id"],
                     "text": tweet["text"],
-                    "author_id": tweet["author_id"],
-                    "created_at": tweet["created_at"],
-                    "public_metrics": tweet["public_metrics"]
+                    "author": tweet["author_id"],
+                    "created": tweet["created_at"],
+                    "views": tweet["public_metrics"]["impression_count"],
+                    "likes": tweet["public_metrics"]["like_count"],
+                    "retweetCount": tweet["public_metrics"]["retweet_count"],
+                    "replyCount": tweet["public_metrics"]["reply_count"]
                 })
         
             return tweets
@@ -71,20 +75,28 @@ class TwitterAPI:
         try:
             response = self.client.get_user(
                 id=user_id,
-                user_fields=["id", "username", "name", "public_metrics", "description", "created_at"]
+                user_fields=["id", "url", 
+                             "username", "name", 
+                             "verified", "public_metrics", 
+                             "description", "created_at",
+                             "verified_type"]
             )
         
             user = response.data
             return {
                 "id": user["id"],
-                "username": user["username"],
-                "name": user["name"],
-                "followers_count": user["public_metrics"]["followers_count"],
-                "following_count": user["public_metrics"]["following_count"],
-                "tweet_count": user["public_metrics"]["tweet_count"],
-                "listed_count": user["public_metrics"]["listed_count"],
-                "description": user["description"],
-                "created_at": user["created_at"]
+                "blue": True if user["verified_type"] == "blue" else False,
+                "userName": user["username"],
+                "url": user["url"],
+                "displayName": user["name"],
+                "verified": user["verified"],
+                "rawDescription": user["description"],
+                "followersCount": user["public_metrics"]["followers_count"],
+                "friendsCount": user["public_metrics"]["following_count"],
+                "tweetCount": user["public_metrics"]["tweet_count"],
+                "listedCount": user["public_metrics"]["listed_count"],
+                "created_at": user["created_at"],
+                "blueType": user["verified_type"] if user["verified_type"] else None
             }
 
         except Exception as e:
@@ -92,7 +104,7 @@ class TwitterAPI:
             return {}
         
 
-    def get_user_tweets(self, user_id: str, max_results: int=10) -> List[Dict[str, Any]]:
+    def get_user_tweets(self, user_id: str, max_results: int=100) -> List[Dict[str, Any]]:
         """
         Retrieve recent tweets from a specific user
         Args:
@@ -122,6 +134,9 @@ class TwitterAPI:
         except Exception as e:
             print(f"ERROR3: {e}")
             return []
+        
+
+
 
 # Objective: 1000-2000 users; 100-200 tweets / user -> 100k-200k tweets -> 11 topics
 
