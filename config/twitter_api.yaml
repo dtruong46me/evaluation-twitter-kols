@@ -1,0 +1,85 @@
+tweets:
+  tweet_fields:
+    - attachments
+    - author_id 
+    - context_annotations
+    - conversation_id
+    - created_at
+    - edit_history_tweet_ids
+    - entities
+    - geo
+    - id
+    - in_reply_to_user_id
+    - lang
+    - public_metrics
+    - referenced_tweets
+    - reply_settings
+    - source
+    - text
+    - withheld
+
+  expansions:
+    - attachments.media_keys
+    - attachments.poll_ids
+    - author_id
+    - entities.mentions.username
+    - geo.place_id
+    - in_reply_to_user_id
+    - referenced_tweets.id
+    - referenced_tweets.id.author_id
+
+  user_fields:
+    - created_at
+    - description
+    - entities
+    - id
+    - location
+    - name
+    - pinned_tweet_id
+    - profile_image_url
+    - protected
+    - public_metrics
+    - url
+    - username
+    - verified
+    - verified_type
+
+  place_fields:
+    - contained_within
+    - country
+    - country_code
+    - full_name
+    - geo
+    - id
+    - name
+    - place_type
+
+users:
+  user_fields:
+    - affiliation
+    - connection_status
+    - created_at
+    - description
+    - entities
+    - id
+    - location
+    - most_recent_tweet_id
+    - name
+    - pinned_tweet_id
+    - profile_banner_url
+    - profile_image_url
+    - protected
+    - public_metrics
+    - receives_your_dm
+    - subscription_type
+    - url
+    - username
+    - verified
+    - verified_followers_count
+    - verified_type
+    - withheld
+
+  expansions:
+    - affiliation.user_id
+    - most_recent_tweet_id
+    - pinned_tweet_id
