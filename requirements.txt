@@ -1,5 +1,10 @@
+
+confluent-kafka
 kafka-python
+numpy
+pandas
+pyspark
 requests
 pyyaml
 unittest
-hdfs==2.7.3
+

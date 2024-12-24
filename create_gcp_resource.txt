@@ -1,0 +1,62 @@
+1. create cluster (remove additional-component flag)
+
+1.1. 1 master, 0 worker
+gcloud dataproc clusters create cluster-streaming \
+    --enable-component-gateway \
+    --public-ip-address --single-node \
+    --region asia-east1 \
+    --zone asia-east1-a \
+    --subnet default \
+    --master-machine-type n2-standard-4 \
+    --master-boot-disk-size 100GB \
+    --image-version 2.2-debian12 \
+    --optional-components JUPYTER \
+    --metadata GCS_CONNECTOR_VERSION=2.2.2 \
+    --bucket business-analysis
+
+1.2 1 master, 2 workers
+gcloud dataproc clusters create twitter-cluster \
+    --region asia-east1 \
+    --zone asia-east1-a \
+    --master-machine-type=n1-standard-2 \
+    --master-boot-disk-size=100GB \
+    --num-workers=2 \
+    --worker-machine-type=n1-standard-2 \
+    --worker-boot-disk-size=100GB \
+    --image-version 2.2-debian12 \
+    --subnet default \
+    --enable-component-gateway \
+    --bucket dataproc-temp-asia-east1-673149684048-gs8o5bgb \
+    --public-ip-address \
+    --initialization-actions gs://business-analysis/scripts/initialization_actions.sh \
+    --metadata GCS_CONNECTOR_VERSION=2.2.2
+
+
+2. Create VM instance
+gcloud compute instances create kafka-instance --project=totemic-program-442307-i9 \
+ --zone=asia-southeast1-a --machine-type=e2-medium \
+ --network-interface=address=35.240.239.52,network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default \
+ --maintenance-policy=MIGRATE --provisioning-model=STANDARD \
+ --service-account=bq-gcs-admin@totemic-program-442307-i9.iam.gserviceaccount.com \
+ --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/trace.append \
+ --create-disk=auto-delete=yes,boot=yes,device-name=kafka-instance,image=projects/debian-cloud/global/images/debian-12-bookworm-v20241112,mode=rw,size=10,type=pd-balanced \
+ --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --labels=goog-ec-src=vm_add-gcloud --reservation-affinity=any
+
+ gcloud compute instances describe kafka-instance \
+    --zone=asia-southeast1-a \
+    --format="get(disks.deviceName,disks.diskSizeGb,disks.type)"
+
+3. Submit Jobs
+gcloud dataproc jobs submit pyspark mongo_to_gcs_users.py \
+    --cluster twitter-cluster \
+    --region asia-east1 \
+    --properties spark.submit.deployMode=cluster \
+    --jars=gs://spark-lib/bigquery/spark-3.5-bigquery-0.41.1.jar
+    
+spark-submit \
+  --master yarn \
+  --deploy-mode cluster \
+  --class com.example.YourMainClass \
+  test_spark_kafka.py
+
+
